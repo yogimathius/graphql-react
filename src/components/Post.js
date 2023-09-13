@@ -1,7 +1,7 @@
 import React from "react";
 import "./Post.scss"; // Import the SCSS file
 
-const Post = ({ title, content, likes, postedBy, ...rest }) => {
+const Post = ({ title, content, postedBy }) => {
   return (
     <div className="post">
       <h2>{title}</h2>

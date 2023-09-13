@@ -1,20 +1,16 @@
 import "./App.css";
-import { useQuery } from "@apollo/client";
-import { getPosts } from "../graphql/queries/getPosts.js";
+import NewPostForm from "./NewPost";
 
-import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
-
-if (process.env.NODE_ENV !== "production") {
-  // Adds messages only in a dev environment
-  loadDevMessages();
-  loadErrorMessages();
-}
+import PostList from "./PostList";
 
 function App() {
-  const { loading, error, data } = useQuery(getPosts);
-
-  console.log(data);
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <h1>Social Network Feed with GraphQL</h1>
+      <NewPostForm />
+      <PostList />
+    </div>
+  );
 }
 
 export default App;
